@@ -1,0 +1,63 @@
+# Xcode
+
+## Build generated
+build/
+DerivedData/
+.build/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+Packages/
+Package.pins
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Checkouts
+Carthage/Build
+
+# fastlane
+fastlane/report.*
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+reports/*
+
+# Custom
+.DS_Store
+Example/Pods/*
+Example/Pods/**
+Example/Pods/**/*
+Example/Podfile.lock
+vendor/*
+.bundle/*
+
+# CLI
+*.coverage.txt
+*.lock
