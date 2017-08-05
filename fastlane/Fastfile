@@ -1,0 +1,61 @@
+default_platform :ios
+
+$scheme = "FTAutenticationDemo"
+$podspec = "FTAuthentication.podspec"
+$project = 'Example/FTAutenticationDemo.xcodeproj'
+$workspace = 'Example/FTAutenticationDemo.xcworkspace'
+
+before_all do |lane, options|
+    sh 'mkdir ../reports || true'
+end
+
+desc "Does a static analysis of the project. Configure the options in .swiftlint.yml"
+lane :lint do
+	swiftlint(
+		mode: :lint,
+		output_file: 'reports/swiftlint.txt',
+ 		config_file: '.swiftlint.yml'
+	)
+end
+
+desc "Runs all the unit tests and UI Tests"
+lane :test do
+	# Run tests
+	test_args = {
+        workspace: $workspace,
+		scheme: $scheme,
+		clean: true,
+		code_coverage: true,
+		output_types: "html",
+		output_directory: "reports"		
+	}
+
+	scan(test_args)
+end
+
+desc "Cocoapods Spec Lint"
+lane :podlibLint do
+    pod_lib_lint(allow_warnings: true)
+end
+
+desc "Create Release Branch"
+lane :bump_pod_version do |options|
+    target_version = options[:version]
+    target_version.sub!("release/", "")
+    branch = 'release/' + target_version
+    # Update Version in the new Branch and commit the change
+	version_bump_podspec(path: $podspec, version_number: target_version)
+    git_add(path: '.')
+    git_commit(path: '.', message: "Bump podspec version: #{target_version}")
+    # Push new Branch to origin
+    push_to_git_remote(local_branch: branch)
+    # Add new Tag to the new branch and push to origin
+    create_tag(version: target_version)
+end
+
+desc "Add new Tag to the branch and push to origin"
+lane :create_tag do |options|
+    target_version = options[:version]
+    add_git_tag(tag: target_version)
+    push_git_tags
+end
