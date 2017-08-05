@@ -1,0 +1,58 @@
+default_platform :ios
+
+$scheme = "FTAutenticationDemo"
+$podspec = "FTAuthentication.podspec"
+$project = 'Example/FTAutenticationDemo.xcodeproj'
+$workspace = 'Example/FTAutenticationDemo.xcworkspace'
+
+before_all do |lane, options|
+    sh 'mkdir ../reports || true'
+end
+
+desc "Does a static analysis of the project. Configure the options in .swiftlint.yml"
+lane :lint do
+	swiftlint(
+		mode: :lint,
+		output_file: 'reports/swiftlint.txt',
+ 		config_file: '.swiftlint.yml'
+	)
+end
+
+desc "Runs all the unit tests and UI Tests"
+lane :test do
+	# Run tests
+	test_args = {
+        workspace: $workspace,
+		scheme: $scheme,
+		clean: true,
+		code_coverage: true,
+		output_types: "html",
+		output_directory: "reports"		
+	}
+
+	scan(test_args)
+end
+
+desc "Cocoapods Spec Lint"
+lane :podlibLint do
+    pod_lib_lint(allow_warnings: true)
+end
+
+desc "Create Release Branch"
+lane :create_release do |options|
+    target_version = options[:version]
+    branch = 'release/' + target_version
+    checkout_cmd = 'git checkout --no-track -b ' + branch + ' refs/heads/master'
+    # Git fetch all
+    sh('git fetch --prune --tags origin --verbose')
+    # Create New Branch
+    sh(checkout_cmd)
+    git_branch
+    # Update Version
+	version_bump_podspec(path: $podspec, version_number: target_version)
+    git_add(path: '.')
+    git_commit(path: '.', message: branch)
+    push_to_git_remote(local_branch: branch)
+    add_git_tag(tag: target_version)
+    push_git_tags
+end

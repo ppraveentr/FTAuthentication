@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "026AC6DC-7790-4AE4-8DCA-12194102D7A1",
+      "name" : "Configuration",
+      "options" : {
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:FTAutenticationDemo.xcodeproj",
+          "identifier" : "DE680BFB1F338A5B00A9F68C",
+          "name" : "FTAutenticationDemo"
+        }
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:FTAutenticationDemo.xcodeproj",
+        "identifier" : "DE57C610269C920C00ED7456",
+        "name" : "FTAutenticationDemoTests"
+      }
+    }
+  ],
+  "version" : 1
+}
