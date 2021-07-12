@@ -12,7 +12,6 @@
 		DE680C051F338A5B00A9F68C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE680C031F338A5B00A9F68C /* Main.storyboard */; };
 		DE680C071F338A5B00A9F68C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE680C061F338A5B00A9F68C /* Assets.xcassets */; };
 		DE680C0A1F338A5B00A9F68C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE680C081F338A5B00A9F68C /* LaunchScreen.storyboard */; };
-		DED4847D1F35BE0D00D2B77F /* FTAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED484761F35BC2100D2B77F /* FTAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +28,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = DED4845F1F35BC2000D2B77F;
 			remoteInfo = FTAuthenticationTests;
-		};
-		DED484791F35BC4A00D2B77F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DED484701F35BC2000D2B77F /* FTAuthentication.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DED484551F35BC2000D2B77F;
-			remoteInfo = FTAuthentication;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -59,10 +51,12 @@
 		DE680C061F338A5B00A9F68C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE680C091F338A5B00A9F68C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE680C0B1F338A5B00A9F68C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE680C141F338A5B00A9F68C /* FTAutenticationDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTAutenticationDemoTests.swift; sourceTree = "<group>"; };
-		DE680C161F338A5B00A9F68C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE680C1F1F338A5B00A9F68C /* FTAutenticationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTAutenticationDemoUITests.swift; sourceTree = "<group>"; };
-		DE680C211F338A5B00A9F68C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE6F59B0269C7255008B6AC7 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile; path = ../../Gemfile; sourceTree = "<group>"; };
+		DE6F59B1269C7255008B6AC7 /* FTAuthentication.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = FTAuthentication.podspec; path = ../../FTAuthentication.podspec; sourceTree = "<group>"; };
+		DE6F59B2269C7268008B6AC7 /* Pluginfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Pluginfile; path = ../../fastlane/Pluginfile; sourceTree = "<group>"; };
+		DE6F59B3269C7268008B6AC7 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = ../../fastlane/Fastfile; sourceTree = "<group>"; };
+		DE6F59B4269C7271008B6AC7 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		DE6F59B7269C8E7C008B6AC7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../../.gitignore; sourceTree = "<group>"; };
 		DED484701F35BC2000D2B77F /* FTAuthentication.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FTAuthentication.xcodeproj; path = ../../FTAuthentication/FTAuthentication.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DED4847D1F35BE0D00D2B77F /* FTAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,8 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				DE680BFE1F338A5B00A9F68C /* FTAutenticationDemo */,
-				DE680C131F338A5B00A9F68C /* FTAutenticationDemoTests */,
-				DE680C1E1F338A5B00A9F68C /* FTAutenticationDemoUITests */,
 				DE680BFD1F338A5B00A9F68C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +90,7 @@
 		DE680BFE1F338A5B00A9F68C /* FTAutenticationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DE6F59AE269C7226008B6AC7 /* PodFiles */,
 				DE680C391F338A9700A9F68C /* Framework */,
 				DE680BFF1F338A5B00A9F68C /* AppDelegate.swift */,
 				DE680C011F338A5B00A9F68C /* ViewController.swift */,
@@ -110,30 +102,25 @@
 			path = FTAutenticationDemo;
 			sourceTree = "<group>";
 		};
-		DE680C131F338A5B00A9F68C /* FTAutenticationDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				DE680C141F338A5B00A9F68C /* FTAutenticationDemoTests.swift */,
-				DE680C161F338A5B00A9F68C /* Info.plist */,
-			);
-			path = FTAutenticationDemoTests;
-			sourceTree = "<group>";
-		};
-		DE680C1E1F338A5B00A9F68C /* FTAutenticationDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DE680C1F1F338A5B00A9F68C /* FTAutenticationDemoUITests.swift */,
-				DE680C211F338A5B00A9F68C /* Info.plist */,
-			);
-			path = FTAutenticationDemoUITests;
-			sourceTree = "<group>";
-		};
 		DE680C391F338A9700A9F68C /* Framework */ = {
 			isa = PBXGroup;
 			children = (
 				DED484701F35BC2000D2B77F /* FTAuthentication.xcodeproj */,
 			);
 			name = Framework;
+			sourceTree = "<group>";
+		};
+		DE6F59AE269C7226008B6AC7 /* PodFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DE6F59B7269C8E7C008B6AC7 /* .gitignore */,
+				DE6F59B4269C7271008B6AC7 /* Podfile */,
+				DE6F59B3269C7268008B6AC7 /* Fastfile */,
+				DE6F59B2269C7268008B6AC7 /* Pluginfile */,
+				DE6F59B1269C7255008B6AC7 /* FTAuthentication.podspec */,
+				DE6F59B0269C7255008B6AC7 /* Gemfile */,
+			);
+			name = PodFiles;
 			sourceTree = "<group>";
 		};
 		DED484711F35BC2000D2B77F /* Products */ = {
@@ -160,7 +147,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DED4847A1F35BC4A00D2B77F /* PBXTargetDependency */,
 			);
 			name = FTAutenticationDemo;
 			productName = FTAutenticationDemo;
@@ -174,7 +160,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Praveen Prabhakar";
 				TargetAttributes = {
 					DE680BFB1F338A5B00A9F68C = {
@@ -186,7 +172,7 @@
 			};
 			buildConfigurationList = DE680BF71F338A5B00A9F68C /* Build configuration list for PBXProject "FTAutenticationDemo" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -250,14 +236,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		DED4847A1F35BC4A00D2B77F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FTAuthentication;
-			targetProxy = DED484791F35BC4A00D2B77F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		DE680C031F338A5B00A9F68C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -282,21 +260,31 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -319,12 +307,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -333,21 +322,31 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -364,10 +363,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -381,11 +381,12 @@
 				DEVELOPMENT_TEAM = W6W48SVQX7;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = FTAutenticationDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.FTAutenticationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -397,11 +398,12 @@
 				DEVELOPMENT_TEAM = W6W48SVQX7;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = FTAutenticationDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ft.FTAutenticationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -415,7 +417,7 @@
 				DE680C231F338A5B00A9F68C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		DE680C241F338A5B00A9F68C /* Build configuration list for PBXNativeTarget "FTAutenticationDemo" */ = {
 			isa = XCConfigurationList;
@@ -424,7 +426,7 @@
 				DE680C261F338A5B00A9F68C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

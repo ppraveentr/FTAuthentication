@@ -1,5 +1,5 @@
 //
-//  FTABase.swift
+//  FTLog.swift
 //  FTAuthentication
 //
 //  Created by Praveen Prabhakar on 05/08/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class FTBase {
+public class FTLog {
     public class func logToConsole(msg: String) {
         print(msg)
     }
