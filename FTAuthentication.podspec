@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FTAuthentication'
-  s.version          = '0.1.0'
+  s.version          = '1.0'
   s.summary          = 'Authentication framework.'
   s.homepage         = 'https://github.com/ppraveentr/FTAuthentication'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
