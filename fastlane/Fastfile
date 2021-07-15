@@ -54,7 +54,27 @@ lane :create_release do |options|
     git_commit(path: '.', message: branch)
     # Push new Branch to origin
     push_to_git_remote(local_branch: branch)
+    create_tag(version: target_version)
+end
+
+desc "Create Release Branch"
+lane :bump_pod_version do |options|
+    target_version = options[:version]
+    target_version.sub!("release/", "")
+    branch = 'release/' + target_version
+    # Update Version in the new Branch and commit the change
+	version_bump_podspec(path: $podspec, version_number: target_version)
+    git_add(path: '.')
+    git_commit(path: '.', message: "Bump podspec version: #{target_version}")
+    # Push new Branch to origin
+    push_to_git_remote(local_branch: branch)
     # Add new Tag to the new branch and push to origin
+    create_tag(version: target_version)
+end
+
+desc "Add new Tag to the branch and push to origin"
+lane :create_tag do |options|
+    target_version = options[:version]
     add_git_tag(tag: target_version)
     push_git_tags
 end

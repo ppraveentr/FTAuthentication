@@ -1,8 +1,9 @@
 name: release
 
 on:
-  push:
-    branches: [ release/** ]
+  release:
+    types:
+      - created
 
 jobs:
    swiftLint:

@@ -1,0 +1,41 @@
+# ./.github/workflows/release-auto-pr.yaml
+name: Release Auto-PR
+
+on:
+  push:
+    branches: ['release/**']
+
+jobs:
+  pull-request:
+    name: Open PR to master
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    # extract branch name
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+        
+    # print branch name
+    - name: Get branch name
+      run: echo 'The branch name is' ${{ steps.extract_branch.outputs.branch }}
+        
+    - name: Install Bundle
+      run: bundle install
+
+    - name: Bump Pod Version
+      run: bundle exec fastlane bump_pod_version version:${{ steps.extract_branch.outputs.branch }}
+
+    - uses: actions/checkout@v2
+      name: checkout
+
+    - uses: repo-sync/pull-request@v2
+      name: pull-request
+      with:
+        destination_branch: "master"
+        pr_title: "Pulling ${{ github.ref }} into master"
+        pr_body: "*An automated PR*"
+        pr_reviewer: "ppraveentr"
+        pr_draft: true
+        github_token: ${{ secrets.GITHUB_TOKEN }}

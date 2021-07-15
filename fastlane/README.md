@@ -35,6 +35,16 @@ Cocoapods Spec Lint
 fastlane create_release
 ```
 Create Release Branch
+### bump_pod_version
+```
+fastlane bump_pod_version
+```
+Create Release Branch
+### create_tag
+```
+fastlane create_tag
+```
+Add new Tag to the branch and push to origin
 
 ----
 
